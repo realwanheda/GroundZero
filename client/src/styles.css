@@ -1,0 +1,202 @@
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0);
+  }
+  50% {
+    transform: translateY(-50px) rotate(45deg);
+  }
+  100% {
+    transform: translateY(0) rotate(0);
+  }
+}
+
+@font-face {
+  font-family: Motion;
+  src: url(assets/motion.ttf);
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #4c43ff, #845fff);
+  font-family: Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.quill-container {
+  border: none;
+}
+
+.container {
+  position: relative;
+  width: 95%;
+  max-width: 1200px;
+  height: 90vh;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ql-editor {
+  width: 100%;
+  min-height: 600px;
+  /* height: 100vh; */
+  padding: 20px;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 1000px rgba(0, 0, 0, 0.3);
+  /* border: solid black 2px; */
+  background: linear-gradient(135deg, #e0e0e0, #ffffff);
+}
+
+.ql-container.ql-snow {
+  border: none;
+}
+
+.ql-toolbar {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* position: sticky; */
+  /* top: 0; */
+  z-index: 1;
+  background-color: #f3f3f3;
+  border-radius: 15px 15px 0 0;
+  /* border: solid red 20px; */
+  /* box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); */
+}
+
+@page {
+  margin: 1in;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
+  body {
+    background: #fff;
+    margin: 0;
+    padding: 20mm; /* Add padding to mimic margin on the printed page */
+  }
+
+  .container {
+    width: 100%; /* Set container width to 100% */
+    margin: auto;
+    box-shadow: none;
+  }
+
+  .ql-toolbar {
+    display: none;
+  }
+
+  .ql-editor {
+    padding: 0;
+    border-radius: 0;
+  }
+}
+
+.bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  animation: float 5s ease-in-out infinite;
+}
+
+.bubble:nth-child(1) {
+  top: 10%;
+  left: 10%;
+}
+
+.bubble:nth-child(2) {
+  top: 20%;
+  left: 20%;
+}
+
+.bubble:nth-child(3) {
+  top: 30%;
+  left: 30%;
+}
+.share-button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+.share-button:hover {
+  background-color: #45a049;
+}
+.title-and-button-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Adjust as needed */
+}
+
+.title-input {
+  flex: 1;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px; /* Add margin between title input and button */
+}
+
+.title-input:focus {
+  outline: none;
+  border-color: #007bff; /* Change border color on focus */
+}
+
+.home-button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.home-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+/* Target specific resolutions for Mac and normal monitors */

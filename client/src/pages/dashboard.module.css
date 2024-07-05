@@ -1,0 +1,115 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.dashboardButton {
+  margin-top: 0px;
+  margin-bottom: 40px;
+  scale: 1.3;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboardButton:hover {
+  background-color: #45a049;
+}
+
+.userInfo {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 100px;
+  scale: 1.3;
+  margin-top: 50px;
+}
+
+.userInfo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  /* margin-bottom: 10px; */
+}
+
+.userInfo h2 {
+  font-family: "Poppins", Courier, monospace;
+  font-size: 36px;
+  margin: 0;
+}
+
+.userInfo p {
+  font-family: "Poppins", Courier, monospace;
+  font-size: 24px;
+  margin: 0;
+}
+.documentsList {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.documentCard {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff00;
+  /* border: 1px solid #ccc; */
+  backdrop-filter: blur(5px);
+  border-radius: 8px;
+  padding: 10px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.documentCard img:hover {
+  transform: translateY(-5px);
+}
+
+.documentCard h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.documentCard img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.documentInfo {
+  text-align: center;
+  color: #fff;
+}
+.documentsContainer {
+  height: 500px; /* Set the desired height */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+.deleteButton {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.deleteButton:hover {
+  background-color: #d32f2f; /* Darker red color on hover */
+}
