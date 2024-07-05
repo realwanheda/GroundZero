@@ -14,10 +14,11 @@ mongoose.connect(process.env.MONGODB_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+const BASE_URL = process.env.BASE_URL;
 const db = mongoose.connection;
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: [`${BASE_URL}`],
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     exposedHeaders: ["set-cookie"],
@@ -35,7 +36,7 @@ db.once("open", function () {
 
 const io = new Server(3001, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: `${BASE_URL}`,
     methods: ["GET", "POST"],
   },
 });
