@@ -30,7 +30,7 @@ function TextEditor() {
   const userId = localStorage.getItem("token");
 
   useEffect(() => {
-    const s = io("http://localhost:3001");
+    const s = io("https://groundzero.onrender.com");
     setSocket(s);
     return () => {
       s.disconnect();
